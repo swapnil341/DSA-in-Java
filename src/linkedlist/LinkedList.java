@@ -66,21 +66,24 @@ public class LinkedList {
 	}
 	
 	// Delete from Begin
-	public void deleteBegin() {
+	public int deleteBegin() {
 		if(head == null) {
-			System.out.println("List is Empty!");
+			//System.out.println("List is Empty!");
+			return -1;
 		}
 		else {
-			System.out.println("Deleted element : " + head.data);
+			//System.out.println("Deleted element : " + head.data);
+			int returnVal = head.data;
 			head = head.next;
+			return returnVal;
 		}
 	}
 	
 	// Delete from given position
-	public void deleteFromPos(int pos) {
+	public int deleteFromPos(int pos) {
 		if(head == null) {
 			System.out.println("List is Empty!");
-			
+			return -1;
 		}
 		else {
 			Node node = head;
@@ -89,22 +92,24 @@ public class LinkedList {
 			}
 			if(node == null) {
 				System.out.println("Invalid Position!");
-				return;
+				return -1;
 			}
 			System.out.println("Deleted Element : " + node.next.data);
+			int returnVal = node.next.data;
 			node.next = node.next.next;
+			return returnVal;
 		}
 	}
 	
 	// Delete Specific Element
-	public void deleteElement(int ele) {
+	public int deleteElement(int ele) {
 		if(head == null) {
 			System.out.println("List is empty");
-			return;
+			return -1;
 		}
 		if(head.data == ele) {
 			head = head.next;
-			return;
+			return head.data;
 		}
 		Node node = head;
 		Node target = null;
@@ -117,7 +122,7 @@ public class LinkedList {
 		}
 		if(target == null) {
 			System.out.println(ele + " not found in the list ");
-			return;
+			return -1;
 		}
 		node = head;
 		while(node != null && node.next != target) {
@@ -125,25 +130,29 @@ public class LinkedList {
 		}
 		
 		System.out.println("deleting element : " + target.data);
+		int returnVal = target.data;
 		node.next = node.next.next;
+		return returnVal;
 	}
 	
 	// Delete from End
-	public void deleteEnd() {
+	public int deleteEnd() {
 		if(head == null) {
 			System.out.println("List is Empty!");
-			return;
+			return -1;
 		}
 		if(head.next == null) {
 			head = null;
-			return;
+			return -1;
 		}
 		Node node = head;
 		while(node.next.next != null) {
 			node = node.next;
 		}
 		System.out.println("Deleting Node: " + node.next.data);
+		int returnVal = node.next.data;
 		node.next = node.next.next;
+		return returnVal;
 		
 	}
 	

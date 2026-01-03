@@ -1,4 +1,4 @@
-package stack;
+package recursion;
 import java.util.Scanner;
 public class NthFibonacci {
 

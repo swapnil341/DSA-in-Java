@@ -1,5 +1,3 @@
-// package recursion;
-
 import java.util.Scanner;
 public class FriendsPairing {
     public static void main(String[] args){

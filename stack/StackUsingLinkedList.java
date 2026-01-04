@@ -1,5 +1,3 @@
-package stack;
-
 import linkedlist.LinkedList;
 
 // Stack implementation using LinkedList

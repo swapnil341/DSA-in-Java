@@ -1,4 +1,3 @@
-package recursion;
 import java.util.Scanner;
 public class SumOfNNaturalNumbers{
 	public static void main(String[] args){
